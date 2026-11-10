@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /about.html
+Allow: /products.html
+Allow: /enquiry.html
+Allow: /contact.html
+
+Sitemap: https://kzncollectibles.co.za/sitemap.xmls
