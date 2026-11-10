@@ -1,0 +1,584 @@
+/* ==========================================================================
+   KZN Collectibles & TCG - Master Stylesheet (Part 2 & Part 3 Final)
+   Module: Web Development (WEDE5020 / XHAW5112 / CONE5112)
+   Student Number: ST10476298
+   ========================================================================== */
+
+/* 1. CSS CUSTOM PROPERTIES (Variables) */
+:root {
+    --clr-primary: #D32F2F;
+    --clr-primary-dark: #9A0007;
+    --clr-accent: #FBC02D;
+    --clr-success: #4CAF50;
+    --clr-error: #FF5252;
+    --clr-bg-dark: #121212;
+    --clr-bg-card: #1E1E1E;
+    --clr-bg-input: #2A2A2A;
+    --clr-text-main: #E0E0E0;
+    --clr-text-muted: #BDBDBD;
+    --clr-white: #FFFFFF;
+
+    --font-base: 'Aptos', 'Inter', 'Segoe UI', Arial, sans-serif;
+    --font-heading: 'Segoe UI', 'Impact', sans-serif;
+    --fs-h1: 2.2rem;
+    --fs-h2: 1.75rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.75rem;
+    --border-radius: 8px;
+    --transition: all 0.25s ease-in-out;
+}
+
+/* 2. GLOBAL RESET & BASE STYLES */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-base);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+    color: var(--clr-text-main);
+    background-color: var(--clr-bg-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--border-radius);
+}
+
+/* 3. TYPOGRAPHY */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--clr-white);
+    margin-bottom: var(--spacing-md);
+}
+
+h1 { font-size: var(--fs-h1); color: var(--clr-primary); margin-bottom: 0.25rem; }
+h2 { font-size: var(--fs-h2); border-bottom: 2px solid var(--clr-primary); padding-bottom: 0.5rem; margin-top: 0.5rem; }
+h3 { font-size: var(--fs-h3); }
+p { margin-bottom: var(--spacing-md); }
+ul { padding-left: 1.25rem; margin-bottom: var(--spacing-md); }
+li { margin-bottom: 0.4rem; }
+
+a {
+    color: var(--clr-accent);
+    text-decoration: none;
+    transition: var(--transition);
+}
+a:hover, a:focus {
+    color: var(--clr-white);
+    text-decoration: underline;
+}
+
+/* 4. HEADER & NAVIGATION (Flexbox) */
+header {
+    background-color: #080808;
+    border-bottom: 3px solid var(--clr-primary);
+    padding: var(--spacing-md) 5%;
+    position: sticky;
+    top: 0;
+    z-index: 900;
+}
+
+.header-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.tagline {
+    color: var(--clr-text-muted);
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+.site-nav {
+    list-style: none;
+    display: flex;
+    gap: 1.25rem;
+    padding-left: 0;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+}
+
+.site-nav a {
+    color: var(--clr-white);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 4px;
+}
+
+.site-nav a:hover,
+.site-nav a:focus,
+.site-nav a.active {
+    background-color: var(--clr-primary);
+    color: var(--clr-white);
+    text-decoration: none;
+}
+
+/* 5. MAIN LAYOUT & CROSS-BROWSER CARD GRID */
+main {
+    flex: 1;
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    padding: var(--spacing-lg) 5%;
+}
+
+section {
+    margin-bottom: 2.5rem;
+}
+
+.hero-banner {
+    background: linear-gradient(135deg, #1E1E1E 0%, #2B1212 100%);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    border-left: 6px solid var(--clr-primary);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+.product-card {
+    background-color: var(--clr-bg-card);
+    padding: 1.5rem;
+    border: 1px solid #333333;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--clr-primary);
+    box-shadow: 0 8px 20px rgba(211, 47, 47, 0.25);
+}
+
+.product-card img {
+    margin-bottom: var(--spacing-md);
+    cursor: zoom-in;
+    border: 1px solid #444;
+    transition: var(--transition);
+}
+
+.product-card img:hover {
+    opacity: 0.92;
+    border-color: var(--clr-accent);
+}
+
+.category-pill {
+    display: inline-block;
+    align-self: flex-start;
+    background-color: #333;
+    color: var(--clr-accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+}
+
+.price-tag {
+    font-size: 1.15rem;
+    color: var(--clr-accent);
+}
+
+/* 6. BUTTONS & INTERACTIVE CONTROLS */
+.cta-group {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    margin-top: var(--spacing-md);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.4rem;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--clr-primary);
+    color: var(--clr-white);
+}
+.btn-primary:hover, .btn-primary:focus {
+    background-color: var(--clr-primary-dark);
+    color: var(--clr-white);
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: #383838;
+    color: var(--clr-white);
+    border: 1px solid #555;
+}
+.btn-secondary:hover, .btn-secondary:focus {
+    background-color: #505050;
+    color: var(--clr-white);
+    text-decoration: none;
+}
+
+/* 7. PART 3 INTERACTIVE TABS & ACCORDION */
+.tabs-container {
+    background-color: var(--clr-bg-card);
+    border: 1px solid #333;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.tab-buttons {
+    display: flex;
+    background-color: #141414;
+    border-bottom: 2px solid #333;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 1rem;
+    background: none;
+    border: none;
+    color: var(--clr-text-muted);
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
+.tab-btn:hover {
+    color: var(--clr-white);
+    background-color: #222;
+}
+
+.tab-btn.active {
+    background-color: var(--clr-primary);
+    color: var(--clr-white);
+}
+
+.tab-panel {
+    display: none;
+    padding: 1.5rem;
+}
+
+.tab-panel.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.accordion-item {
+    background-color: var(--clr-bg-card);
+    border: 1px solid #333;
+    border-radius: var(--border-radius);
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 1.1rem 1.25rem;
+    background-color: #242424;
+    color: var(--clr-white);
+    border: none;
+    text-align: left;
+    font-size: 1.05rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.accordion-header:hover {
+    background-color: #2E2E2E;
+    color: var(--clr-accent);
+}
+
+.accordion-icon {
+    font-size: 1.4rem;
+    color: var(--clr-primary);
+    font-weight: bold;
+    margin-left: 1rem;
+}
+
+.accordion-body {
+    display: none;
+    padding: 1.25rem;
+    border-top: 1px solid #333;
+    background-color: var(--clr-bg-card);
+}
+
+.accordion-item.open .accordion-body {
+    display: block;
+}
+
+/* 8. PART 3 SEARCH & FILTER BAR */
+.filter-bar {
+    background-color: var(--clr-bg-card);
+    padding: 1.25rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #333;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.filter-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+    color: var(--clr-accent);
+}
+
+.status-badge {
+    font-weight: 600;
+    color: var(--clr-text-muted);
+}
+
+/* 9. PART 3 LIGHTBOX MODAL */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.lightbox-modal.active {
+    display: flex;
+}
+
+.lightbox-content {
+    background-color: var(--clr-bg-card);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--clr-primary);
+    max-width: 750px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.lightbox-content img {
+    max-height: 65vh;
+    margin: 0 auto 1rem auto;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: var(--clr-white);
+    font-size: 2.2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.lightbox-caption {
+    font-size: 1.05rem;
+    color: var(--clr-white);
+    margin-bottom: 1rem;
+}
+
+.lightbox-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* 10. PART 3 INTERACTIVE MAP */
+.map-container {
+    width: 100%;
+    height: 420px;
+    background-color: #1A1A1A;
+    border: 2px solid var(--clr-primary);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    z-index: 10;
+}
+
+.map-fallback-text {
+    padding: 2rem;
+    text-align: center;
+    color: var(--clr-text-muted);
+}
+
+/* 11. FORMS, VALIDATION & RESPONSE PANELS */
+fieldset {
+    background-color: var(--clr-bg-card);
+    padding: 1.5rem;
+    border: 1px solid #333;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-lg);
+}
+
+legend {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--clr-accent);
+    padding: 0 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.1rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+.required {
+    color: var(--clr-error);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="search"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--clr-bg-input);
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: var(--clr-white);
+    font-family: var(--font-base);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--clr-accent);
+    box-shadow: 0 0 6px rgba(251, 192, 45, 0.4);
+}
+
+input.input-error, select.input-error, textarea.input-error {
+    border-color: var(--clr-error);
+    background-color: rgba(255, 82, 82, 0.08);
+}
+
+input.input-valid, select.input-valid, textarea.input-valid {
+    border-color: var(--clr-success);
+}
+
+.error-msg {
+    display: block;
+    color: var(--clr-error);
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    min-height: 1.1rem;
+}
+
+.response-panel {
+    margin-top: var(--spacing-lg);
+    padding: 1.5rem;
+    background-color: #162418;
+    border: 2px solid var(--clr-success);
+    border-radius: var(--border-radius);
+    color: var(--clr-white);
+}
+
+/* 12. FOOTER */
+footer {
+    background-color: #080808;
+    text-align: center;
+    padding: 1.25rem;
+    border-top: 1px solid #333;
+    margin-top: auto;
+    font-size: 0.9rem;
+}
+
+/* 13. RESPONSIVE MEDIA QUERIES (Tablet & Mobile) */
+@media (max-width: 992px) {
+    .card-grid, .filter-bar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .site-nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.4rem;
+    }
+
+    .site-nav a {
+        display: block;
+        border: 1px solid #222;
+    }
+
+    .card-grid, .filter-bar, .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .tab-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
