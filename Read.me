@@ -1,0 +1,67 @@
+# KZN Collectibles & TCG — Web Development PoE (Part 3 Final Submission)
+
+Student Name: [Insert Full Name]  
+Student Number:ST10476298  
+Module Name:Web Development WEDE5020   
+Institution:  EmerisPietermaritzburg Campus  
+
+
+
+
+## 1. Project Overview
+KZN Collectibles & TCG is a hobbyist retail store operating in Pietermaritzburg and Hilton, KwaZulu-Natal. This web application provides a responsive product catalogue, interactive store location mapping, live inventory filtering, automated tournament seat/cost estimation, and client-side form validation.
+
+
+
+## 2. Working Through Feedback from Part 2 (Fixes Implemented)
+Following the lecturer's feedback from Part 2 stating that the code did not execute as expected during marking, a comprehensive technical audit and refactoring were completed:
+1. Replaced Experimental CSS Selectors: Removed the `section:has(article)` selector from `css/styles.css` and implemented explicit, cross-browser compatible class selectors (`.card-grid`, `.product-card`, `.site-nav`). This ensures consistent rendering across all modern and legacy browsers (Grant, 2018: 74).
+2. Standardised Relative File Paths: Verified that all five HTML files link accurately to `css/styles.css` and `js/scripts.js` using lowercase relative paths, preventing case-sensitivity failures when deployed to Linux-based hosting environments such as GitHub Pages (Duckett, 2014: 412).
+3. Self-Healing Visual Assets: Implemented SEO-friendly image paths alongside inline SVG fallback data URIs so that visual elements and the Gallery Lightbox render reliably even in offline marking environments.
+
+
+
+## 3. Part 3 JavaScript Enhancements & Functionality
+In alignment with modern DOM manipulation standards (Flanagan, 2020: 389), the following interactive features were engineered in `js/scripts.js`:
+Interactive Elements (Accordions & Tabs):** Implemented an accessible FAQ Accordion on `about.html` using `aria-expanded` attributes and dynamic height transitions, alongside interactive format tabs on `index.html` (MDN Web Docs, 2026a).
+Interactive Maps (Leaflet.js Integration):** Integrated the open-source Leaflet.js mapping library on `contact.html` displaying interactive pins, popups, and branch-switching controls for both the Pietermaritzburg Flagship Store (`-29.6006, 30.3794`) and the Hilton Express Outlet (`-29.5547, 30.3014`) (Leaflet, 2026).
+Responsive Gallery Lightbox:** Built a custom modal lightbox across `index.html` and `products.html` supporting click-to-zoom, dynamic captions, next/previous navigation, and keyboard accessibility (`Escape`, `ArrowLeft`, `ArrowRight`).
+Dynamic Content, Live Search, Filtering & Sorting:** Engineered a real-time search bar, category filter buttons (`All`, `Sealed TCG`, `Accessories`, `Board Games`), and price sorting (`Low to High`, `High to Low`) on `products.html` to dynamically filter DOM nodes without page reloads (Flanagan, 2020: 415).
+
+
+
+## 4. Search Engine Optimization (SEO) & Security Implementation
+On-Page SEO:** Unique, keyword-optimised `<title>`, `<meta name="description">`, and `<meta name="keywords">` tags were integrated into all five pages targeting local search intent in KwaZulu-Natal (Google Search Central, 2025).
+Image Optimisation:** All `<img>` elements incorporate descriptive, hyphenated filenames (e.g., `pokemon-obsidian-flames-etb-kzn.jpg`), explicit `width`/`height` dimensions to prevent Cumulative Layout Shift (CLS), and keyword-rich `alt` attributes for screen readers (W3C, 2023).
+Technical SEO (`robots.txt` & `sitemap.xml`):** Created a root-level `robots.txt` file instructing search engine crawlers to index all public pages and linked an XML sitemap (`sitemap.xml`) defining page priorities and update frequencies (Google Search Central, 2025).
+Security & Page Speed:** Applied input sanitization in JavaScript to prevent Cross-Site Scripting (XSS) injection on form inputs, deferred script execution (`defer`), and utilised lazy loading (`loading="lazy"`) on catalogue imagery (MDN Web Docs, 2026b).
+
+
+
+## 5. Form Validation, Processing & Email Compilation
+Enquiry Form (`enquiry.html`):** Validates customer name, email format ( via Regular Expressions), South African phone numbers (`10 digits`), quantity/participants, and enquiry type. Upon validation, the script dynamically calculates and displays an **Instant Cost & Availability Quote** (e.g., calculating total ZAR cost for booster box pre-orders or tournament entry fees and checking live seat availability).
+Contact Form (`contact.html`):** Validates sender credentials, subject category, target branch, and minimum message length with real-time inline error messages. Once validated, the script simulates an asynchronous AJAX submission and compiles the payload into a structured `mailto:` URI directed to the selected store branch (`pmb@kzncollectibles.co.za` or `hilton@kzncollectibles.co.za`).
+
+
+
+## 6. Comprehensive Development Changelog
+ `2026-09-01` **[Part 1]**: Initialized Git repository, created folder structure (`css/`, `js/`, `images/`), and authored semantic HTML5 markup across all 5 pages.
+ `2026-10-04` **[Part 2]**: Created `css/styles.css` with CSS custom properties, Flexbox navigation, CSS Grid product layouts, and responsive media queries (`992px` and `768px`).
+ `2026-11-10` **[Part 2 Feedback Fix]**: Refactored `css/styles.css` to replace `:has()` selectors with standard `.card-grid` classes, standardized all `<link>` and `<script>` relative paths, and added SVG image fallbacks so the project runs with zero errors on any machine.
+ `2026-11-10` **[Part 3 SEO]**: Added page-specific `<title>`, `<meta name="description">`, `<meta name="keywords">`, optimised image `alt` texts, and generated `robots.txt` and `sitemap.xml`.
+ `2026-11-10` **[Part 3 Interactivity]**: Created `js/scripts.js` implementing the FAQ Accordion (`about.html`), Category Tabs (`index.html`), and interactive Gallery Lightbox modal (`index.html`, `products.html`).
+ `2026-11-10` **[Part 3 Dynamic Catalogue & Map]**: Added live product search, category filtering, and price sorting on `products.html`, and integrated the interactive Leaflet.js map on `contact.html`.
+ `2026-11-10` **[Part 3 Forms & Deployment]**: Engineered client-side JavaScript validation, dynamic ZAR quote calculation on `enquiry.html`, AJAX/`mailto:` email compilation on `contact.html`, and deployed the live site via GitHub Pages.
+
+---
+
+## 7. Reference List (IIE Harvard Style)
+ Duckett, J., 2014. *Web Design with HTML, CSS, JavaScript and jQuery Set*. Indianapolis: John Wiley & Sons.
+ Flanagan, D., 2020. *JavaScript: The Definitive Guide*. 7th ed. Sebastopol: O'Reilly Media.
+ Google Search Central, 2025. *Search Engine Optimization (SEO) Starter Guide*. Google. Available at: <https://developers.google.com/search/docs/fundamentals/seo-starter-guide> [Accessed 10 November 2026].
+ Grant, K., 2018. *CSS in Depth*. Shelter Island: Manning Publications.
+ Leaflet, 2026. *Leaflet — an open-source JavaScript library for mobile-friendly interactive maps*. Available at: <https://leafletjs.com/> [Accessed 10 November 2026].
+ MDN Web Docs, 2026a. *Document Object Model (DOM)*. Mozilla. Available at: <https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model> [Accessed 10 November 2026].
+ MDN Web Docs, 2026b. *Client-side form validation*. Mozilla. Available at: <https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation> [Accessed 10 November 2026].
+ Robbins, J.N., 2018. *Learning Web Design: A Beginner's Guide to HTML, CSS, JavaScript, and Web Graphics*. 5th ed. Sebastopol: O'Reilly Media.
+ World Wide Web Consortium (W3C), 2023. *Web Content Accessibility Guidelines (WCAG) 2.2*. Available at: <https://www.w3.org/TR/WCAG22/> [Accessed 10 November 2026].
