@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalogue &amp; TCG Shop | KZN Collectibles &amp; TCG</title>
+    <meta name="description" content="Search and filter sealed Pokémon booster boxes, Elite Trainer Boxes, top-loading card sleeves, magnetic cases, and strategy board games in Pietermaritzburg.">
+    <meta name="keywords" content="buy Pokemon booster box KZN, Elite Trainer Box price South Africa, top loading inner sleeves, magnetic card case 35pt, board games Pietermaritzburg">
+    <meta name="author" content="ST10476298">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div>
+                <h1>KZN Collectibles &amp; TCG</h1>
+                <p class="tagline"><em>Equipping your next tabletop adventure in KwaZulu-Natal.</em></p>
+            </div>
+            <nav aria-label="Main Navigation">
+                <ul class="site-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html" class="active">Catalogue &amp; Shop</a></li>
+                    <li><a href="enquiry.html">Event Registration</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Interactive Product Catalogue &amp; Gallery</h2>
+            <p>Use the live search bar, category buttons, or price sorter below to filter our inventory. <strong>Click any product image to open the full-screen Lightbox Gallery.</strong></p>
+
+            <!-- Dynamic Search, Filter & Sort Controls (Part 3 Rubric Requirement) -->
+            <div class="filter-bar" aria-label="Catalogue Search and Filter Controls">
+                <div class="filter-group">
+                    <label for="productSearch">Search Products:</label>
+                    <input type="search" id="productSearch" placeholder="Search e.g. Booster, Sleeves, Binder, Catan...">
+                </div>
+
+                <div class="filter-group">
+                    <label for="categoryFilter">Filter by Category:</label>
+                    <select id="categoryFilter">
+                        <option value="all">All Categories (6 Items)</option>
+                        <option value="sealed">Sealed TCG Products</option>
+                        <option value="accessories">Card Protection &amp; Accessories</option>
+                        <option value="boardgames">Tabletop Board Games</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="priceSort">Sort by Price:</label>
+                    <select id="priceSort">
+                        <option value="default">Featured Order</option>
+                        <option value="low-high">Price: Low to High (R45 &rarr; R2,450)</option>
+                        <option value="high-low">Price: High to Low (R2,450 &rarr; R45)</option>
+                    </select>
+                </div>
+            </div>
+
+            <p id="catalogueCount" class="status-badge">Showing all 6 available products</p>
+
+            <!-- Product Grid (Dynamically Filtered & Sorted via JavaScript) -->
+            <div id="productGrid" class="card-grid">
+                
+                <article class="product-card catalogue-item" data-category="sealed" data-price="2450" data-title="Factory Sealed Booster Display Box 36 Packs">
+                    <img src="images/pokemon-sealed-booster-display-box-36ct.jpg" 
+                         alt="Factory Sealed TCG Booster Display Box containing 36 booster packs" 
+                         class="lightbox-trigger"
+                         data-caption="Factory Sealed Booster Display Box (36 Packs) — Authentic English factory-sealed display box (R2,450.00)"
+                         loading="lazy" width="400" height="250"
+                         onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22 viewBox=%220 0 400 250%22><rect width=%22400%22 height=%22250%22 fill=%22%23261212%22/><rect x=%2215%22 y=%2215%22 width=%22370%22 height=%22220%22 rx=%2210%22 fill=%22none%22 stroke=%22%23EF5350%22 stroke-width=%223%22/><text x=%22200%22 y=%22105%22 fill=%22%23FFFFFF%22 font-family=%22sans-serif%22 font-size=%2219%22 font-weight=%22bold%22 text-anchor=%22middle%22>SEALED BOOSTER BOX (36ct)</text><text x=%22200%22 y=%22140%22 fill=%22%23FFCDD2%22 font-family=%22sans-serif%22 font-size=%2214%22 text-anchor=%22middle%22>36 Unweighed Factory Booster Packs</text><text x=%22200%22 y=%22180%22 fill=%22%23FBC02D%22 font-family=%22sans-serif%22 font-size=%2218%22 font-weight=%22bold%22 text-anchor=%22middle%22>R2,450.00 (Click to Enlarge)</text></svg>';">
+                    <span class="category-pill">Sealed TCG</span>
+                    <h3>Factory Sealed Booster Display Box (36 Packs)</h3>
+                    <p>Full retail display box containing 36 individual unweighed booster packs from the latest expansion set.</p>
+                    <p class="price-tag"><strong>Price:</strong> R2,450.00</p>
+                    <a href="enquiry.html" class="btn btn-primary">Enquire / Order</a>
+                </article>
+
+                <article class="product-card catalogue-item" data-category="sealed" data-price="1100" data-title="Obsidian Flames Collector Elite Trainer Box ETB">
+                    <img src="images/obsidian-flames-elite-trainer-box-promo.jpg" 
+                         alt="Obsidian Flames Collector Elite Trainer Box with Charmander promo card" 
+                         class="lightbox-trigger"
+                         data-caption="Collector's Elite Trainer Box (ETB) — Includes 9 booster packs, Charmander promo, 65 sleeves & dice (R1,100.00)"
+                         loading="lazy" width="400" height="250"
+                         onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22 viewBox=%220 0 400 250%22><rect width=%22400%22 height=%22250%22 fill=%22%23241812%22/><rect x=%2215%22 y=%2215%22 width=%22370%22 height=%22220%22 rx=%2210%22 fill=%22none%22 stroke=%22%23FFA726%22 stroke-width=%223%22/><text x=%22200%22 y=%22105%22 fill=%22%23FFFFFF%22 font-family=%22sans-serif%22 font-size=%2219%22 font-weight=%22bold%22 text-anchor=%22middle%22>ELITE TRAINER BOX (ETB)</text><text x=%22200%22 y=%22140%22 fill=%22%23FFE0B2%22 font-family=%22sans-serif%22 font-size=%2214%22 text-anchor=%22middle%22>9 Packs + Full-Art Foil Promo</text><text x=%22200%22 y=%22180%22 fill=%22%23FBC02D%22 font-family=%22sans-serif%22 font-size=%2218%22 font-weight=%22bold%22 text-anchor=%22middle%22>R1,100.00 (Click to Enlarge)</text></svg>';">
+                    <span class="category-pill">Sealed TCG</span>
+                    <h3>Collector's Elite Trainer Box (ETB)</h3>
+                    <p>Includes 9 expansion booster packs, 65 custom sleeves, full-art promotional card, energy brick, and player's guide.</p>
+                    <p class="price-tag"><strong>Price:</strong> R1,100.00</p>
+                    <a href="enquiry.html" class="btn btn-primary">Enquire / Order</a>
+                </article>
+
+                <article class="product-card catalogue-item" data-category="sealed" data-price="420" data-title="Two Player Starter Battle Deck Bundle">
+                    <img src="images/two-player-starter-battle-deck-bundle.jpg" 
+                         alt="Two-Player Starter Battle Deck Bundle for learning competitive TCG play" 
+                         class="lightbox-trigger"
+                         data-caption="Two-Player Starter Battle Decks — Ready-to-play 60-card decks with rulebooks and playmat (R420.00)"
+                         loading="lazy" width="400" height="250"
+                         onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22 viewBox=%220 0 400 250%22><rect width=%22400%22 height=%22250%22 fill=%22%231b1424%22/><rect x=%2215%22 y=%2215%22 width=%22370%22 height=%22220%22 rx=%2210%22 fill=%22none%22 stroke=%22%23AB47BC%22 stroke-width=%223%22/><text x=%22200%22 y=%22105%22 fill=%22%23FFFFFF%22 font-family=%22sans-serif%22 font-size=%2219%22 font-weight=%22bold%22 text-anchor=%22middle%22>STARTER BATTLE DECKS</text><text x=%22200%22 y=%22140%22 fill=%22%23E1BEE7%22 font-family=%22sans-serif%22 font-size=%2214%22 text-anchor=%22middle%22>Two 60-Card Ready-to-Play Decks</text><text x=%22200%22 y=%22180%22 fill=%22%23FBC02D%22 font-family=%22sans-serif%22 font-size=%2218%22 font-weight=%22bold%22 text-anchor=%22middle%22>R420.00 (Click to Enlarge)</text></svg>';">
+                    <span class="category-pill">Sealed TCG</span>
+                    <h3>Two-Player Starter Battle Decks</h3>
+                    <p>Pre-constructed 60-card decks engineered for newcomers to master competitive tabletop mechanics immediately.</p>
+                    <p class="price-tag"><strong>Price:</strong> R420.00</p>
+                    <a href="enquiry.html" class="btn btn-primary">Enquire / Order</a>
+                </article>
+
+                <article class="product-card catalogue-item" data-category="accessories" data-price="45" data-title="Magnetic One Touch UV Display Case 35pt">
+                    <img src="images/magnetic-one-touch-35pt-card-case.jpg" 
+                         alt="UV blocking 35pt Magnetic One-Touch acrylic display case for rare trading cards" 
+                         class="lightbox-trigger"
+                         data-caption="Magnetic One-Touch Display Case (35pt) — UV-resistant hard acrylic slab with gold magnet (R45.00)"
+                         loading="lazy" width="400" height="250"
+                         onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22 viewBox=%220 0 400 250%22><rect width=%22400%22 height=%22250%22 fill=%22%23122026%22/><rect x=%2215%22 y=%2215%22 width=%22370%22 height=%22220%22 rx=%2210%22 fill=%22none%22 stroke=%22%2326C6DA%22 stroke-width=%223%22/><text x=%22200%22 y=%22105%22 fill=%22%23FFFFFF%22 font-family=%22sans-serif%22 font-size=%2219%22 font-weight=%22bold%22 text-anchor=%22middle%22>35pt MAGNETIC ONE-TOUCH</text><text x=%22200%22 y=%22140%22 fill=%22%23B2EBF2%22 font-family=%22sans-serif%22 font-size=%2214%22 text-anchor=%22middle%22>UV-Blocking Acrylic Card Protector</text><text x=%22200%22 y=%22180%22 fill=%22%23FBC02D%22 font-family=%22sans-serif%22 font-size=%2218%22 font-weight=%22bold%22 text-anchor=%22middle%22>R45.00 (Click to Enlarge)</text></svg>';">
+                    <span class="category-pill">Accessories</span>
+                    <h3>Magnetic One-Touch Display Case (35pt)</h3>
+                    <p>UV-blocking, diamond-corner acrylic magnetic holder designed to preserve high-value holo and promo singles.</p>
+                    <p class="price-tag"><strong>Price:</strong> R45.00</p>
+                    <a href="enquiry.html" class="btn btn-primary">Enquire / Order</a>
+                </article>
+
+                <article class="product-card catalogue-item" data-category="accessories" data-price="380" data-title="9 Pocket Side Loading Zip Card Binder 360 Capacity">
+                    <img src="images/9-pocket-side-loading-tcg-zip-binder.jpg" 
+                         alt="9-Pocket Side-Loading Zip Card Binder holding 360 sleeved trading cards" 
+                         class="lightbox-trigger"
+                         data-caption="9-Pocket Side-Loading Zip Binder (360 Capacity) — Padded faux-leather cover with acid-free black backing pages (R380.00)"
+                         loading="lazy" width="400" height="250"
+                         onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22 viewBox=%220 0 400 250%22><rect width=%22400%22 height=%22250%22 fill=%22%231c2214%22/><rect x=%2215%22 y=%2215%22 width=%22370%22 height=%22220%22 rx=%2210%22 fill=%22none%22 stroke=%22%239CCC65%22 stroke-width=%223%22/><text x=%22200%22 y=%22105%22 fill=%22%23FFFFFF%22 font-family=%22sans-serif%22 font-size=%2219%22 font-weight=%22bold%22 text-anchor=%22middle%22>9-POCKET PRO ZIP BINDER</text><text x=%22200%22 y=%22140%22 fill=%22%23DCEDC8%22 font-family=%22sans-serif%22 font-size=%2214%22 text-anchor=%22middle%22>360 Side-Loading Archival Pockets</text><text x=%22200%22 y=%22180%22 fill=%22%23FBC02D%22 font-family=%22sans-serif%22 font-size=%2218%22 font-weight=%22bold%22 text-anchor=%22middle%22>R380.00 (Click to Enlarge)</text></svg>';">
+                    <span class="category-pill">Accessories</span>
+                    <h3>9-Pocket Side-Loading Zip Binder (360 Capacity)</h3>
+                    <p>Archival-safe, PVC-free side-loading pockets with top-loading inner sleeve compatibility and full zipper closure.</p>
+                    <p class="price-tag"><strong>Price:</strong> R380.00</p>
+                    <a href="enquiry.html" class="btn btn-primary">Enquire / Order</a>
+                </article>
+
+                <article class="product-card catalogue-item" data-category="boardgames" data-price="890" data-title="Catan Midlands Strategy Tabletop Board Game">
+                    <img src="images/strategy-tabletop-board-game-catan-kzn.jpg" 
+                         alt="Strategy resource management tabletop board game for 2 to 6 players" 
+                         class="lightbox-trigger"
+                         data-caption="Midlands Strategy Tabletop Board Game — Award-winning resource trading and settlement building game (R890.00)"
+                         loading="lazy" width="400" height="250"
+                         onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22 viewBox=%220 0 400 250%22><rect width=%22400%22 height=%22250%22 fill=%22%23262012%22/><rect x=%2215%22 y=%2215%22 width=%22370%22 height=%22220%22 rx=%2210%22 fill=%22none%22 stroke=%22%23FFCA28%22 stroke-width=%223%22/><text x=%22200%22 y=%22105%22 fill=%22%23FFFFFF%22 font-family=%22sans-serif%22 font-size=%2219%22 font-weight=%22bold%22 text-anchor=%22middle%22>STRATEGY BOARD GAME</text><text x=%22200%22 y=%22140%22 fill=%22%23FFF59D%22 font-family=%22sans-serif%22 font-size=%2214%22 text-anchor=%22middle%22>2-6 Players | 60-90 Min Playtime</text><text x=%22200%22 y=%22180%22 fill=%22%23FBC02D%22 font-family=%22sans-serif%22 font-size=%2218%22 font-weight=%22bold%22 text-anchor=%22middle%22>R890.00 (Click to Enlarge)</text></svg>';">
+                    <span class="category-pill">Board Games</span>
+                    <h3>Strategy Board Games (Midlands Series)</h3>
+                    <p>Complete tabletop resource-management and territory strategy board game suitable for family game nights (2–6 players).</p>
+                    <p class="price-tag"><strong>Price:</strong> R890.00</p>
+                    <a href="enquiry.html" class="btn btn-primary">Enquire / Order</a>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox Modal Container -->
+    <div id="lightboxModal" class="lightbox-modal" aria-hidden="true" role="dialog" aria-label="Image Lightbox">
+        <div class="lightbox-content">
+            <button type="button" id="lightboxClose" class="lightbox-close" aria-label="Close Lightbox">&times;</button>
+            <img id="lightboxImage" src="" alt="Enlarged product preview">
+            <p id="lightboxCaption" class="lightbox-caption"></p>
+            <div class="lightbox-controls">
+                <button type="button" id="lightboxPrev" class="btn btn-secondary">&larr; Previous</button>
+                <button type="button" id="lightboxNext" class="btn btn-secondary">Next &rarr;</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 KZN Collectibles &amp; TCG. All Rights Reserved. | Student Number: ST10476298</p>
+        <p><a href="sitemap.xml">XML Sitemap</a> | <a href="contact.html">Store Locations</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration, Card Sourcing &amp; Quote Calculator | KZN Collectibles &amp; TCG</title>
+    <meta name="description" content="Register for weekly TCG tournaments, reserve sealed booster boxes, or apply to become a volunteer judge or sponsor with instant ZAR cost and availability estimates.">
+    <meta name="keywords" content="TCG tournament registration Pietermaritzburg, Pokemon card sourcing South Africa, pre-order booster box KZN, tabletop event sponsorship">
+    <meta name="author" content="ST10476298">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div>
+                <h1>KZN Collectibles &amp; TCG</h1>
+                <p class="tagline"><em>Equipping your next tabletop adventure in KwaZulu-Natal.</em></p>
+            </div>
+            <nav aria-label="Main Navigation">
+                <ul class="site-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Catalogue &amp; Shop</a></li>
+                    <li><a href="enquiry.html" class="active">Event Registration</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Tournament Registration, Product Enquiry &amp; Instant Cost Calculator</h2>
+            <p>Complete the validated form below to check live stock/seat availability and generate an instant cost breakdown for tournaments, sealed reservations, single card sourcing, or event sponsorship.</p>
+
+            <form id="enquiryForm" action="#" method="post" novalidate>
+                <fieldset>
+                    <legend>1. Player / Customer Credentials</legend>
+                    
+                    <div class="form-group">
+                        <label for="fullName">Full Name &amp; Surname: <span class="required">*</span></label>
+                        <input type="text" id="fullName" name="fullName" placeholder="e.g. Rohan Maharaj" minlength="3" required>
+                        <small class="error-msg" id="fullNameError" aria-live="polite"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address: <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="e.g. collector@domain.co.za" required>
+                        <small class="error-msg" id="emailError" aria-live="polite"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactNumber">South African Mobile / WhatsApp Number (10 digits): <span class="required">*</span></label>
+                        <input type="tel" id="contactNumber" name="contactNumber" placeholder="e.g. 0821234567" required>
+                        <small class="error-msg" id="contactNumberError" aria-live="polite"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="playerId">Official Player ID (Optional — POP ID / Konami / Wizard ID):</label>
+                        <input type="text" id="playerId" name="playerId" placeholder="e.g. POP-449201">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>2. Service, Product or Sponsorship Selection</legend>
+
+                    <div class="form-group">
+                        <label for="enquiryType">Select Enquiry Category: <span class="required">*</span></label>
+                        <select id="enquiryType" name="enquiryType" required>
+                            <option value="">-- Choose an Enquiry Option --</option>
+                            <option value="tournament-friday">Tournament RSVP: Friday Night Casual League (R80 / player)</option>
+                            <option value="tournament-saturday">Tournament RSVP: Saturday Modern Championship (R150 / player)</option>
+                            <option value="preorder-etb">Product Reservation: Obsidian Flames Elite Trainer Box (R1,100 / unit)</option>
+                            <option value="preorder-booster">Product Reservation: Sealed 36-Pack Booster Box (R2,450 / unit)</option>
+                            <option value="card-sourcing">Single Card Valuation &amp; International Sourcing (R50 deposit / card)</option>
+                            <option value="sponsor-volunteer">Community Tier: Event Sponsorship / Volunteer Judge Application</option>
+                        </select>
+                        <small class="error-msg" id="enquiryTypeError" aria-live="polite"></small>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="quantity">Quantity / Number of Seats (1–20): <span class="required">*</span></label>
+                            <input type="number" id="quantity" name="quantity" min="1" max="20" value="1" required>
+                            <small class="error-msg" id="quantityError" aria-live="polite"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="preferredDate">Preferred Event / Collection Date: <span class="required">*</span></label>
+                            <input type="date" id="preferredDate" name="preferredDate" required>
+                            <small class="error-msg" id="preferredDateError" aria-live="polite"></small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="branchSelect">Preferred Store Branch: <span class="required">*</span></label>
+                        <select id="branchSelect" name="branchSelect" required>
+                            <option value="Pietermaritzburg Flagship (15 Chief Albert Luthuli Rd)">Pietermaritzburg Flagship (15 Chief Albert Luthuli Rd)</option>
+                            <option value="Hilton Express Outlet (8 Hilton Ave)">Hilton Express Outlet (8 Hilton Ave)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="requestDetails">Specific Card Details, Deck Format, or Sponsorship Notes (Min 10 characters): <span class="required">*</span></label>
+                        <textarea id="requestDetails" name="requestDetails" rows="4" placeholder="Specify card set numbers (e.g. SVP 044), language preferences, deck archetype, or sponsorship details..." required></textarea>
+                        <small class="error-msg" id="requestDetailsError" aria-live="polite"></small>
+                    </div>
+                </fieldset>
+
+                <div class="cta-group">
+                    <button type="submit" class="btn btn-primary">Validate &amp; Calculate Instant Quote</button>
+                    <button type="reset" id="resetEnquiryBtn" class="btn btn-secondary">Clear Form</button>
+                </div>
+            </form>
+
+            <!-- Dynamic JavaScript Response Output Panel (Part 3 Rubric Requirement) -->
+            <div id="enquiryResponseBox" class="response-panel" hidden aria-live="polite"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 KZN Collectibles &amp; TCG. All Rights Reserved. | Student Number: ST10476298</p>
+        <p><a href="sitemap.xml">XML Sitemap</a> | <a href="contact.html">Store Locations</a></p>
+    </footer>
+</body>
+</html>

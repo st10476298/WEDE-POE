@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us &amp; Interactive Store Map | KZN Collectibles &amp; TCG</title>
+    <meta name="description" content="Find KZN Collectibles &amp; TCG in Pietermaritzburg Central and Hilton Village using our interactive map, or send a direct email enquiry to our support team.">
+    <meta name="keywords" content="KZN Collectibles address, hobby store Pietermaritzburg map, Hilton card shop location, contact KZN Collectibles">
+    <meta name="author" content="ST10476298">
+    <!-- Leaflet.js Open-Source Interactive Map CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Leaflet.js Library & Custom Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="" defer></script>
+    <script src="js/scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div>
+                <h1>KZN Collectibles &amp; TCG</h1>
+                <p class="tagline"><em>Equipping your next tabletop adventure in KwaZulu-Natal.</em></p>
+            </div>
+            <nav aria-label="Main Navigation">
+                <ul class="site-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Catalogue &amp; Shop</a></li>
+                    <li><a href="enquiry.html">Event Registration</a></li>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Our KwaZulu-Natal Store Locations</h2>
+            <div class="card-grid">
+                <article class="product-card">
+                    <h3>Branch 1: Pietermaritzburg Flagship &amp; Tournament Hall</h3>
+                    <p><strong>Physical Address:</strong> 15 Chief Albert Luthuli Road, Pietermaritzburg Central, 3201</p>
+                    <p><strong>Direct Telephone:</strong> +27 (0)33 555 1234</p>
+                    <p><strong>Email Recipient:</strong> <a href="mailto:pmb@kzncollectibles.co.za">pmb@kzncollectibles.co.za</a></p>
+                    <p><strong>Trading Hours:</strong> Tue–Sun: 09:00–18:00 (Fridays until 22:00)</p>
+                    <button type="button" class="btn btn-secondary map-focus-btn" data-lat="-29.6006" data-lng="30.3794" data-branch="pmb">Focus Map on PMB Flagship</button>
+                </article>
+
+                <article class="product-card">
+                    <h3>Branch 2: Hilton Express Outlet</h3>
+                    <p><strong>Physical Address:</strong> 8 Hilton Avenue, Hilton Village, Hilton, 3245</p>
+                    <p><strong>Direct Telephone:</strong> +27 (0)33 555 5678</p>
+                    <p><strong>Email Recipient:</strong> <a href="mailto:hilton@kzncollectibles.co.za">hilton@kzncollectibles.co.za</a></p>
+                    <p><strong>Trading Hours:</strong> Wed–Sun: 10:00–17:00</p>
+                    <button type="button" class="btn btn-secondary map-focus-btn" data-lat="-29.5547" data-lng="30.3014" data-branch="hilton">Focus Map on Hilton Outlet</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- Interactive Map Section (Part 3 Rubric Requirement) -->
+        <section>
+            <h2>Interactive Store Locator Map (Pietermaritzburg &amp; Hilton)</h2>
+            <p>Click the markers on the map or use the branch buttons above to inspect directions and store coordinates:</p>
+            <div id="storeMap" class="map-container" role="region" aria-label="Interactive Map of KZN Collectibles Store Branches">
+                <p class="map-fallback-text">Loading interactive Leaflet map for Pietermaritzburg (-29.6006, 30.3794) and Hilton (-29.5547, 30.3014)...</p>
+            </div>
+        </section>
+
+        <!-- Validated General Contact Form with Email Compilation -->
+        <section>
+            <h2>Send a Direct Message to Our Team</h2>
+            <p>Complete the form below. Once validated, your message will be compiled and ready to send directly to the selected branch email recipient.</p>
+
+            <form id="contactForm" action="mailto:pmb@kzncollectibles.co.za" method="post" enctype="text/plain" novalidate>
+                <fieldset>
+                    <legend>Customer Support &amp; General Message Form</legend>
+
+                    <div class="form-group">
+                        <label for="senderName">Your Full Name: <span class="required">*</span></label>
+                        <input type="text" id="senderName" name="senderName" placeholder="e.g. Rohan Maharaj" required>
+                        <small class="error-msg" id="senderNameError" aria-live="polite"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="senderEmail">Your Email Address: <span class="required">*</span></label>
+                        <input type="email" id="senderEmail" name="senderEmail" placeholder="e.g. name@example.co.za" required>
+                        <small class="error-msg" id="senderEmailError" aria-live="polite"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="senderPhone">Contact Telephone Number (10 digits): <span class="required">*</span></label>
+                        <input type="tel" id="senderPhone" name="senderPhone" placeholder="e.g. 0831234567" required>
+                        <small class="error-msg" id="senderPhoneError" aria-live="polite"></small>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="messageType">Type of Message: <span class="required">*</span></label>
+                            <select id="messageType" name="messageType" required>
+                                <option value="">-- Select Message Type --</option>
+                                <option value="General Store Enquiry">General Store Enquiry</option>
+                                <option value="Order Delivery Status">Order / Courier Status</option>
+                                <option value="Trade-In Appraisal Request">Card Trade-In Appraisal</option>
+                                <option value="Customer Feedback">Customer Service Feedback</option>
+                            </select>
+                            <small class="error-msg" id="messageTypeError" aria-live="polite"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="preferredBranch">Recipient Branch Email: <span class="required">*</span></label>
+                            <select id="preferredBranch" name="preferredBranch" required>
+                                <option value="pmb@kzncollectibles.co.za">PMB Flagship (pmb@kzncollectibles.co.za)</option>
+                                <option value="hilton@kzncollectibles.co.za">Hilton Express (hilton@kzncollectibles.co.za)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="feedbackMsg">Full Message (Minimum 15 characters): <span class="required">*</span></label>
+                        <textarea id="feedbackMsg" name="feedbackMsg" rows="5" placeholder="Type your full message to our store team here..." required></textarea>
+                        <small class="error-msg" id="feedbackMsgError" aria-live="polite"></small>
+                    </div>
+
+                    <div class="cta-group">
+                        <button type="submit" class="btn btn-primary">Validate &amp; Compile Email</button>
+                        <button type="reset" id="resetContactBtn" class="btn btn-secondary">Reset</button>
+                    </div>
+                </fieldset>
+            </form>
+
+            <!-- Compiled Email & AJAX Output Container -->
+            <div id="contactResponseBox" class="response-panel" hidden aria-live="polite"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 KZN Collectibles &amp; TCG. All Rights Reserved. | Student Number: ST10476298</p>
+        <p><a href="sitemap.xml">XML Sitemap</a> | <a href="contact.html">Store Locations</a></p>
+    </footer>
+</body>
+</html>
